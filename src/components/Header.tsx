@@ -32,7 +32,7 @@ const Header: React.FC = () => {
 
   return (
     <>
-      <header className="sticky top-0 z-50 border-b border-border bg-surface/80 backdrop-blur-md supports-[backdrop-filter]:bg-surface/60 text-textPrimary">
+      <header className="sticky top-0 z-50 border-b border-border bg-white/90 text-textPrimary">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between md:h-20">
             {/* Logo */}
