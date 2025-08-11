@@ -1,0 +1,15 @@
+# Ignorer les fichiers node_modules (projets JavaScript/Node.js)
+node_modules/
+
+# Ignorer les fichiers de log
+*.log
+
+# Ignorer les dossiers build ou dist (fichiers compilés)
+dist/
+build/
+
+# Ignorer les fichiers temporaires système (macOS)
+.DS_Store
+
+# Ignorer les fichiers d'environnement (ex: variables sensibles)
+.env
