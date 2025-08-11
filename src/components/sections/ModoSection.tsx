@@ -103,7 +103,7 @@ const categories: Category[] = [
       },
       {
         id: 6,
-        mcName: "mcName",
+        mcName: "Yay4_L3_M0ut0n",
         mcAvatar: "https://mc-heads.net/avatar/0385/100",
         discordName: "msieur_yanis__70207",
         discordId: "1138213846478237746",
