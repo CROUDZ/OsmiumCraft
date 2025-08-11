@@ -46,9 +46,7 @@ const categories: Category[] = [
         mcAvatar: "https://mc-heads.net/avatar/0385/100",
         discordName: "dark_night_xd",
         discordId: "799663780824350751",
-        tags: [
-          { label: "Admin Suprême", color: "bg-purple-500 text-white" },
-        ],
+        tags: [{ label: "Admin Suprême", color: "bg-purple-500 text-white" }],
       },
     ],
   },
@@ -64,7 +62,7 @@ const categories: Category[] = [
         tags: [
           { label: "Modérateur Chef", color: "bg-green-500 text-white" },
           { label: "Développeur", color: "bg-blue-500 text-white" },
-          { label: "Builder", color: "bg-orange-500 text-white" }
+          { label: "Builder", color: "bg-orange-500 text-white" },
         ],
       },
       {
@@ -76,7 +74,7 @@ const categories: Category[] = [
         tags: [
           { label: "Modérateur Gradé", color: "bg-red-400 text-white" },
           { label: "Chef Builder", color: "bg-orange-600 text-white" },
-          { label: "Développeur", color: "bg-blue-500 text-white" }
+          { label: "Développeur", color: "bg-blue-500 text-white" },
         ],
       },
       {
@@ -85,9 +83,7 @@ const categories: Category[] = [
         mcAvatar: "https://mc-heads.net/avatar/Croudz_MC/100",
         discordName: "croudz_",
         discordId: "585889513935601666",
-        tags: [
-          { label: "Développeur Web", color: "bg-pink-600 text-white" }
-        ],
+        tags: [{ label: "Développeur Web", color: "bg-pink-600 text-white" }],
       },
       {
         id: 4,
@@ -95,17 +91,15 @@ const categories: Category[] = [
         mcAvatar: "https://mc-heads.net/avatar/0385/100",
         discordName: "lisandru2a5",
         discordId: "1197279905705099377",
-        tags: [
-        ],
+        tags: [],
       },
       {
         id: 5,
-        mcName: "mcName",
+        mcName: "LebgNino101212",
         mcAvatar: "https://mc-heads.net/avatar/0385/100",
         discordName: "nino101212",
         discordId: "1063556447037833316",
-        tags: [
-        ],
+        tags: [],
       },
       {
         id: 6,
@@ -121,8 +115,7 @@ const categories: Category[] = [
         mcAvatar: "https://mc-heads.net/avatar/0385/100",
         discordName: "enzo03803",
         discordId: "1140717140941492344",
-        tags: [
-        ],
+        tags: [],
       },
       {
         id: 8,
@@ -130,13 +123,11 @@ const categories: Category[] = [
         mcAvatar: "https://mc-heads.net/avatar/0385/100",
         discordName: "liptondestroyer",
         discordId: "1342912344669290549",
-        tags: [
-        ],
+        tags: [],
       },
     ],
   },
 ];
-
 
 import { useState } from "react";
 
@@ -144,16 +135,18 @@ const Moderators: React.FC = () => {
   const [search, setSearch] = useState("");
 
   // Filtrer les membres selon la recherche (pseudo MC ou Discord)
-  const filteredCategories = categories.map((category) => ({
-    ...category,
-    members: category.members.filter((member) => {
-      const query = search.toLowerCase();
-      return (
-        member.mcName.toLowerCase().includes(query) ||
-        member.discordName.toLowerCase().includes(query)
-      );
-    }),
-  })).filter((cat) => cat.members.length > 0 || search === "");
+  const filteredCategories = categories
+    .map((category) => ({
+      ...category,
+      members: category.members.filter((member) => {
+        const query = search.toLowerCase();
+        return (
+          member.mcName.toLowerCase().includes(query) ||
+          member.discordName.toLowerCase().includes(query)
+        );
+      }),
+    }))
+    .filter((cat) => cat.members.length > 0 || search === "");
 
   return (
     <section className="py-20 bg-surface" id="moderators">

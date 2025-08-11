@@ -58,7 +58,10 @@ const Reviews: React.FC = () => {
             Ce que disent nos joueurs
           </h2>
           <p className="text-textSecondary">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat distinctio soluta placeat hic voluptatibus autem corrupti repellendus deleniti omnis quo, nobis, nostrum aut commodi praesentium consequuntur beatae id ipsam iste?
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat
+            distinctio soluta placeat hic voluptatibus autem corrupti
+            repellendus deleniti omnis quo, nobis, nostrum aut commodi
+            praesentium consequuntur beatae id ipsam iste?
           </p>
         </m.div>
 

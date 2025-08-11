@@ -7,7 +7,7 @@
   --color-primary-light: #f4c3f6;
   --color-primary-dark: #9b2a96;
 
-  --color-background: #ffffff;
+  --color-background: hsl(0, 0%, 100%);
   --color-surface: #f9f9f9;
   --color-text-primary: #222222;
   --color-text-secondary: #555555;
@@ -25,7 +25,7 @@ body {
     Helvetica,
     Arial,
     sans-serif;
-  background-color: var(--color-background);
+  background-color: var(--color-surface);
   color: var(--color-text-primary);
   line-height: 1.5;
 }
