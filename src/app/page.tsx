@@ -6,6 +6,9 @@ import { m, AnimatePresence } from "framer-motion";
 import { Check, Gamepad2, Users, Zap } from "lucide-react";
 
 import Background from "@/assets/background.webp";
+import YoutubeSvg from "@/assets/svg/youtube.svg";
+import DiscordSvg from "@/assets/svg/discord.svg";
+import TiktokSvg from "@/assets/svg/tiktok.svg";
 
 const Header = dynamic(() => import("@/components/Header"), { ssr: false });
 
@@ -52,6 +55,24 @@ export default function Home() {
     { icon: Zap, label: "Événements", color: "text-yellow-400", delay: 0.4 },
   ];
 
+  const socialLinks = [
+    {
+      href: "https://discord.com/invite/3fjUuFQn6Y",
+      label: "Discord",
+      icon: DiscordSvg,
+    },
+    {
+      href: "https://www.youtube.com/channel/UCJW1E4BOVur5jeHEu1uLTqQ",
+      label: "YouTube",
+      icon: YoutubeSvg,
+    },
+    {
+      href: "http://www.google.com/url?q=http%3A%2F%2Ftiktok.com%2F%40osmium.craft&sa=D&sntz=1&usg=AOvVaw1N035i5HzjkIcXp_764YoU",
+      label: "TikTok",
+      icon: TiktokSvg,
+    },
+  ];
+
   return (
     <div className="min-h-screen">
       <Header />
@@ -72,7 +93,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/70 to-black/95" />
 
         {/* Main Content */}
-        <div className="relative z-10 flex items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8">
+        <div className="relative z-10 flex py-6 items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8">
           <div className="w-full max-w-6xl mx-auto text-center text-white">
             {/* Hero Section */}
             <m.div
@@ -141,12 +162,17 @@ export default function Home() {
               className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-4xl mx-auto"
             >
               {/* IP Address */}
-              <div className={`relative bg-white/5 backdrop-blur-md rounded-xl border border-white/10 p-6 ${copiedIP ? '' : 'hover:bg-white/10'} transition-all duration-300 cursor-pointer select-text`}
+              <div
+                className={`relative bg-white/5 backdrop-blur-md rounded-xl border border-white/10 p-6 ${copiedIP ? "" : "hover:bg-white/10"} transition-all duration-300 cursor-pointer select-text`}
                 onClick={() => copyToClipboard(ip, setCopiedIP)}
                 aria-label="Copier l'adresse IP du serveur"
                 role="button"
                 tabIndex={0}
-                onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { copyToClipboard(ip, setCopiedIP) } }}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    copyToClipboard(ip, setCopiedIP);
+                  }
+                }}
               >
                 <label className="block text-xs uppercase font-medium text-purple-300 mb-3 select-none">
                   Adresse IP du serveur
@@ -167,7 +193,9 @@ export default function Home() {
                     >
                       <div className="flex items-center gap-2 text-white">
                         <Check size={20} className="text-white" />
-                        <span className="font-semibold text-lg">IP Copiée !</span>
+                        <span className="font-semibold text-lg">
+                          IP Copiée !
+                        </span>
                       </div>
                     </m.div>
                   )}
@@ -175,12 +203,17 @@ export default function Home() {
               </div>
 
               {/* Port */}
-              <div className={`relative bg-white/5 backdrop-blur-md rounded-xl border border-white/10 p-6 ${copiedPort ? '' : 'hover:bg-white/10'} transition-all duration-300 cursor-pointer select-text`}
+              <div
+                className={`relative bg-white/5 backdrop-blur-md rounded-xl border border-white/10 p-6 ${copiedPort ? "" : "hover:bg-white/10"} transition-all duration-300 cursor-pointer select-text`}
                 onClick={() => copyToClipboard(port, setCopiedPort)}
                 aria-label="Copier le port du serveur"
                 role="button"
                 tabIndex={0}
-                onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { copyToClipboard(port, setCopiedPort) } }}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    copyToClipboard(port, setCopiedPort);
+                  }
+                }}
               >
                 <label className="block text-xs uppercase font-medium text-blue-300 mb-3 select-none">
                   Port du serveur
@@ -201,14 +234,15 @@ export default function Home() {
                     >
                       <div className="flex items-center gap-2 text-white">
                         <Check size={20} className="text-white" />
-                        <span className="font-semibold text-lg">Port Copié !</span>
+                        <span className="font-semibold text-lg">
+                          Port Copié !
+                        </span>
                       </div>
                     </m.div>
                   )}
                 </AnimatePresence>
               </div>
             </m.div>
-
 
             {/* Call to Action */}
             <m.div
@@ -221,6 +255,26 @@ export default function Home() {
                 Copie l'IP et le port, puis connecte-toi depuis Minecraft !
               </p>
             </m.div>
+
+            {/* Social Links - Simple Circles */}
+            <div className="mt-8 flex justify-center gap-5">
+              {socialLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors duration-200"
+                  aria-label={link.label}
+                >
+                  <link.icon
+                    width={28}
+                    height={28}
+                    className="object-contain"
+                  />
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </main>

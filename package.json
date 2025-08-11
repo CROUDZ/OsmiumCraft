@@ -11,6 +11,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@svgr/webpack": "^8.1.0",
     "framer-motion": "^12.20.2",
     "lucide-react": "^0.539.0",
     "motion": "^12.23.12",
