@@ -3,7 +3,7 @@ import dynamic from "next/dynamic";
 import Image from "next/image";
 import { useState } from "react";
 import { m, AnimatePresence } from "framer-motion";
-import { Copy, Check, Gamepad2, Users, Zap } from "lucide-react";
+import { Check, Gamepad2, Users, Zap } from "lucide-react";
 
 import Background from "@/assets/background.webp";
 
