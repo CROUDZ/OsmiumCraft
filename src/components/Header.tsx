@@ -37,7 +37,11 @@ const Header: React.FC = () => {
           <div className="flex h-16 items-center justify-between md:h-20">
             {/* Logo */}
             <div className="flex items-center gap-3">
-              <Link href="/" aria-label="Retour à l'accueil" className="flex items-center gap-3">
+              <Link
+                href="/"
+                aria-label="Retour à l'accueil"
+                className="flex items-center gap-3"
+              >
                 <Image
                   src={Osmium_logo}
                   alt="OsmiumCraft Logo"
@@ -46,7 +50,9 @@ const Header: React.FC = () => {
                   priority
                   className="rounded-lg transition-transform duration-300 motion-reduce:transition-none hover:scale-[1.03]"
                 />
-                <span className="text-xl font-bold hidden md:block">OsmiumCraft</span>
+                <span className="text-xl font-bold hidden md:block">
+                  OsmiumCraft
+                </span>
               </Link>
             </div>
 
@@ -62,11 +68,15 @@ const Header: React.FC = () => {
                     className={[
                       "group relative inline-block rounded-md px-4 py-2 text-base font-medium transition-colors duration-200",
                       "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40",
-                      isActive ? "text-primary" : "text-textPrimary hover:text-primary",
+                      isActive
+                        ? "text-primary"
+                        : "text-textPrimary hover:text-primary",
                       // soulignement animé
                       "after:pointer-events-none after:absolute after:left-0 after:right-0 after:-bottom-0.5",
                       "after:h-0.5 after:origin-left after:scale-x-0 after:bg-primary after:transition-transform after:duration-300",
-                      isActive ? "after:scale-x-100" : "group-hover:after:scale-x-100",
+                      isActive
+                        ? "after:scale-x-100"
+                        : "group-hover:after:scale-x-100",
                     ].join(" ")}
                   >
                     {label}
@@ -94,7 +104,11 @@ const Header: React.FC = () => {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth={2}
-                  d={isMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
+                  d={
+                    isMenuOpen
+                      ? "M6 18L18 6M6 6l12 12"
+                      : "M4 6h16M4 12h16M4 18h16"
+                  }
                 />
               </svg>
               <span className="sr-only">Menu</span>
@@ -109,7 +123,9 @@ const Header: React.FC = () => {
             "md:hidden absolute left-0 right-0 top-full z-50 origin-top bg-surface shadow-lg",
             "transition-all duration-300 ease-out motion-reduce:transition-none",
             "overflow-hidden",
-            isMenuOpen ? "opacity-100 scale-y-100" : "pointer-events-none opacity-0 scale-y-0",
+            isMenuOpen
+              ? "opacity-100 scale-y-100"
+              : "pointer-events-none opacity-0 scale-y-0",
           ].join(" ")}
         >
           <nav className="flex flex-col py-2">
@@ -123,7 +139,9 @@ const Header: React.FC = () => {
                   className={[
                     "block px-6 py-3 text-lg font-medium transition-colors duration-200",
                     "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40",
-                    isActive ? "text-primary" : "text-textPrimary hover:text-primary",
+                    isActive
+                      ? "text-primary"
+                      : "text-textPrimary hover:text-primary",
                   ].join(" ")}
                 >
                   {label}

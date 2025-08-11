@@ -3,20 +3,28 @@
 @tailwind utilities;
 
 :root {
-  --color-primary: #E14FDC;
-  --color-primary-light: #F4C3F6;
-  --color-primary-dark: #9B2A96;
+  --color-primary: #e14fdc;
+  --color-primary-light: #f4c3f6;
+  --color-primary-dark: #9b2a96;
 
-  --color-background: #FFFFFF;
-  --color-surface: #F9F9F9;
+  --color-background: #ffffff;
+  --color-surface: #f9f9f9;
   --color-text-primary: #222222;
   --color-text-secondary: #555555;
-  --color-border: #E0E0E0;
+  --color-border: #e0e0e0;
 }
 
 html,
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
   background-color: var(--color-background);
   color: var(--color-text-primary);
   line-height: 1.5;
