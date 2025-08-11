@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@svgr/webpack": "^8.1.0",
+    "critters": "^0.0.23",
     "framer-motion": "^12.20.2",
     "lucide-react": "^0.539.0",
     "motion": "^12.23.12",
