@@ -21,6 +21,7 @@ import {
 import dynamic from "next/dynamic";
 import Image from "next/image";
 
+
 const Header = dynamic(() => import("@/components/Header"), { ssr: false });
 const Footer = dynamic(() => import("@/components/Footer"), { ssr: false });
 
@@ -62,8 +63,9 @@ export default function WikiPage() {
   const CommandBlock = ({ command, description }: Command) => (
     <m.div
       className="bg-surface border border-border rounded-lg p-4 hover:shadow-md transition-all duration-200"
-      whileHover={{ scale: 1.005 }}
-      whileTap={{ scale: 0.98 }}
+      whileHover={{ scale: 1.01 }} // réduit l'effet
+      whileTap={{ scale: 0.99 }}   // réduit l'effet
+      transition={{ duration: 0.1 }} // animation plus rapide
     >
       <div className="flex items-center justify-between mb-2">
         <button
@@ -560,9 +562,9 @@ export default function WikiPage() {
       <div className=" text-primary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <m.div
-            initial={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, y: -10 }} // réduit le déplacement
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.2 }} // animation plus rapide
             className="text-center"
           >
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Wiki OsmiumCraft</h1>
@@ -577,9 +579,9 @@ export default function WikiPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Category Navigation */}
         <m.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 10 }} // réduit le déplacement
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
+          transition={{ delay: 0.1, duration: 0.15 }} // animation plus rapide
           className="mb-8"
         >
           <div className="flex flex-wrap gap-2 justify-center">
@@ -606,9 +608,9 @@ export default function WikiPage() {
         {/* Content */}
         <m.div
           key={activeCategory}
-          initial={{ opacity: 0, x: 20 }}
+          initial={{ opacity: 0, x: 10 }} // réduit le déplacement
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.4 }}
+          transition={{ duration: 0.18 }} // animation plus rapide
           className="bg-white rounded-xl shadow-lg border border-border overflow-hidden"
         >
           <div className="p-6 sm:p-8">
@@ -620,9 +622,10 @@ export default function WikiPage() {
         <AnimatePresence>
           {copiedCommand && (
             <m.div
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 20 }} // réduit le déplacement
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 50 }}
+              exit={{ opacity: 0, y: 20 }}
+              transition={{ duration: 0.15 }} // animation plus rapide
               className="fixed bottom-4 right-4 bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg flex items-center gap-2"
             >
               <Check className="w-5 h-5" />

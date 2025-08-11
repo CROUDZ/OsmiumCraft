@@ -156,7 +156,7 @@ const Moderators: React.FC = () => {
           className="text-center mb-14"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.2 }}
           viewport={{ once: true }}
         >
           <h2 className="text-3xl md:text-4xl font-bold text-primary-dark">
@@ -187,7 +187,7 @@ const Moderators: React.FC = () => {
               className="text-2xl font-semibold text-textPrimary mb-6 border-b border-border pb-2"
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.4 }}
+              transition={{ duration: 0.2 }}
               viewport={{ once: true }}
             >
               {category.title}
@@ -202,8 +202,8 @@ const Moderators: React.FC = () => {
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{
-                    delay: index * 0.15,
-                    duration: 0.5,
+                    delay: index * 0.05,
+                    duration: 0.2,
                   }}
                   viewport={{ once: true }}
                 >

@@ -49,9 +49,9 @@ const Reviews: React.FC = () => {
         {/* Introduction */}
         <m.div
           className="text-center max-w-2xl mx-auto mb-14"
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0, y: -10 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.2 }}
           viewport={{ once: true }}
         >
           <h2 className="text-3xl md:text-4xl font-bold text-primary-dark mb-4">
@@ -70,10 +70,10 @@ const Reviews: React.FC = () => {
           {reviews.map((review, index) => (
             <m.div
               key={review.id}
-              className="bg-background border border-border rounded-lg shadow-sm p-6 flex flex-col items-center text-center hover:shadow-lg transition-all duration-300 hover:scale-[1.02]"
-              initial={{ opacity: 0, y: 40 }}
+              className="bg-background border border-border rounded-lg shadow-sm p-6 flex flex-col items-center text-center"
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.15, duration: 0.5 }}
+              transition={{ delay: index * 0.05, duration: 0.2 }}
               viewport={{ once: true }}
             >
               {/* Avatar */}
