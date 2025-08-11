@@ -2,7 +2,7 @@
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import { useState } from "react";
-import { m } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { Copy, Check, Gamepad2, Users, Zap } from "lucide-react";
 
 import Background from "@/assets/background.webp";
@@ -141,50 +141,74 @@ export default function Home() {
               className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-4xl mx-auto"
             >
               {/* IP Address */}
-              <div className="bg-white/5 backdrop-blur-md rounded-xl border border-white/10 p-6 hover:bg-white/10 transition-all duration-300">
-                <label className="block text-xs uppercase font-medium text-purple-300 mb-3">
+              <div className={`relative bg-white/5 backdrop-blur-md rounded-xl border border-white/10 p-6 ${copiedIP ? '' : 'hover:bg-white/10'} transition-all duration-300 cursor-pointer select-text`}
+                onClick={() => copyToClipboard(ip, setCopiedIP)}
+                aria-label="Copier l'adresse IP du serveur"
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { copyToClipboard(ip, setCopiedIP) } }}
+              >
+                <label className="block text-xs uppercase font-medium text-purple-300 mb-3 select-none">
                   Adresse IP du serveur
                 </label>
-                <code
-                  className="bg-gray-900/50 border border-purple-400/20 text-white font-mono text-sm md:text-base px-4 py-3 rounded-lg flex items-center justify-center select-text"
-                  style={{ userSelect: "text" }}
-                >
-                  <span className="flex-1 text-center select-text">{ip}</span>
-                  <button
-                    onClick={() => copyToClipboard(ip, setCopiedIP)}
-                    className="ml-3 p-1 rounded-lg hover:bg-white/20 transition-colors duration-200 text-white flex items-center justify-center"
-                    aria-label={copiedIP ? "IP copiée" : "Copier l'IP"}
-                    type="button"
-                    // empêcher la sélection du texte lors du clic sur le bouton
-                    onMouseDown={(e) => e.preventDefault()}
-                  >
-                    {copiedIP ? <Check size={20} /> : <Copy size={20} />}
-                  </button>
+                <code className="bg-gray-900/50 border border-purple-400/20 text-white font-mono text-sm md:text-base px-4 py-3 rounded-lg text-center block">
+                  {ip}
                 </code>
+
+                {/* Overlay Copié */}
+                <AnimatePresence>
+                  {copiedIP && (
+                    <m.div
+                      initial={{ opacity: 0, scale: 0.95 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.95 }}
+                      transition={{ duration: 0.2, ease: "easeOut" }}
+                      className="absolute inset-0 bg-black/60 backdrop-blur-lg rounded-xl flex items-center justify-center pointer-events-none select-none"
+                    >
+                      <div className="flex items-center gap-2 text-white">
+                        <Check size={20} className="text-white" />
+                        <span className="font-semibold text-lg">IP Copiée !</span>
+                      </div>
+                    </m.div>
+                  )}
+                </AnimatePresence>
               </div>
 
               {/* Port */}
-              <div className="bg-white/5 backdrop-blur-md rounded-xl border border-white/10 p-6 hover:bg-white/10 transition-all duration-300">
-                <label className="block text-xs uppercase font-medium text-blue-300 mb-3">
+              <div className={`relative bg-white/5 backdrop-blur-md rounded-xl border border-white/10 p-6 ${copiedPort ? '' : 'hover:bg-white/10'} transition-all duration-300 cursor-pointer select-text`}
+                onClick={() => copyToClipboard(port, setCopiedPort)}
+                aria-label="Copier le port du serveur"
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { copyToClipboard(port, setCopiedPort) } }}
+              >
+                <label className="block text-xs uppercase font-medium text-blue-300 mb-3 select-none">
                   Port du serveur
                 </label>
-                <code
-                  className="bg-gray-900/50 border border-blue-400/20 text-white font-mono text-sm md:text-base px-4 py-3 rounded-lg flex items-center justify-center select-text"
-                  style={{ userSelect: "text" }}
-                >
-                  <span className="flex-1 text-center select-text">{port}</span>
-                  <button
-                    onClick={() => copyToClipboard(port, setCopiedPort)}
-                    className="ml-3 p-1 rounded-lg hover:bg-white/20 transition-colors duration-200 text-white flex items-center justify-center"
-                    aria-label={copiedPort ? "Port copié" : "Copier le port"}
-                    type="button"
-                    onMouseDown={(e) => e.preventDefault()}
-                  >
-                    {copiedPort ? <Check size={20} /> : <Copy size={20} />}
-                  </button>
+                <code className="bg-gray-900/50 border border-blue-400/20 text-white font-mono text-sm md:text-base px-4 py-3 rounded-lg text-center block">
+                  {port}
                 </code>
+
+                {/* Overlay Copié */}
+                <AnimatePresence>
+                  {copiedPort && (
+                    <m.div
+                      initial={{ opacity: 0, scale: 0.95 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.95 }}
+                      transition={{ duration: 0.2, ease: "easeOut" }}
+                      className="absolute inset-0 bg-black/60 backdrop-blur-lg rounded-xl flex items-center justify-center pointer-events-none select-none"
+                    >
+                      <div className="flex items-center gap-2 text-white">
+                        <Check size={20} className="text-white" />
+                        <span className="font-semibold text-lg">Port Copié !</span>
+                      </div>
+                    </m.div>
+                  )}
+                </AnimatePresence>
               </div>
             </m.div>
+
 
             {/* Call to Action */}
             <m.div
