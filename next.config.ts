@@ -4,6 +4,9 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizeCss: true,
   },
+  images: {
+    domains: ["mc-heads.net"],
+  },
   reactStrictMode: true,
   compress: true,
   webpack(config, { dev, isServer }) {
