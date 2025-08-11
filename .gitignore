@@ -13,3 +13,5 @@ build/
 
 # Ignorer les fichiers d'environnement (ex: variables sensibles)
 .env
+
+.next/

@@ -17,7 +17,22 @@ const config: Config = {
         '2xl': '1536px',
       },
       fontFamily: {
-        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        sans: ['Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif'],
+      },
+      colors: {
+        primary: {
+          DEFAULT: '#E14FDC',
+          light: '#F4C3F6',
+          dark: '#9B2A96',
+        },
+        background: '#FFFFFF',
+        surface: '#F9F9F9',
+        textPrimary: '#222222',
+        textSecondary: '#555555',
+        border: '#E0E0E0',
+      },
+      borderRadius: {
+        DEFAULT: '6px',
       },
     },
   },
