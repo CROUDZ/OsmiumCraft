@@ -34,6 +34,10 @@ const config: Config = {
       borderRadius: {
         DEFAULT: "6px",
       },
+      animation: {
+        "bounce-delay-1": "bounce 1s infinite 0.1s",
+        "bounce-delay-2": "bounce 1s infinite 0.2s",
+      },
     },
   },
   plugins: [],

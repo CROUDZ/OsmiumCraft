@@ -21,7 +21,6 @@ import {
 import dynamic from "next/dynamic";
 import Image from "next/image";
 
-
 const Header = dynamic(() => import("@/components/Header"), { ssr: false });
 const Footer = dynamic(() => import("@/components/Footer"), { ssr: false });
 
@@ -64,7 +63,7 @@ export default function WikiPage() {
     <m.div
       className="bg-surface border border-border rounded-lg p-4 hover:shadow-md transition-all duration-200"
       whileHover={{ scale: 1.01 }} // réduit l'effet
-      whileTap={{ scale: 0.99 }}   // réduit l'effet
+      whileTap={{ scale: 0.99 }} // réduit l'effet
       transition={{ duration: 0.1 }} // animation plus rapide
     >
       <div className="flex items-center justify-between mb-2">
@@ -273,7 +272,8 @@ export default function WikiPage() {
                   <li>4 fioles d'expérience (non craftables)</li>
                 </ul>
                 <p className="text-sm bg-blue-50 border border-blue-200 rounded p-3">
-                  <Lightbulb className="inline w-4 h-4 mr-2" /> <strong>Astuce :</strong> Ces ingrédients sont parfois
+                  <Lightbulb className="inline w-4 h-4 mr-2" />{" "}
+                  <strong>Astuce :</strong> Ces ingrédients sont parfois
                   disponibles au market via les admins ou autres joueurs.
                 </p>
               </div>
@@ -567,7 +567,9 @@ export default function WikiPage() {
             transition={{ duration: 0.2 }} // animation plus rapide
             className="text-center"
           >
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Wiki OsmiumCraft</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+              Wiki OsmiumCraft
+            </h1>
             <p className="text-xl text-textPrimary max-w-2xl mx-auto">
               Découvrez tout ce qu'il faut savoir sur le serveur : commandes,
               features uniques, et astuces de pro !
