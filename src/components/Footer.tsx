@@ -56,9 +56,12 @@ const Footer: React.FC = () => {
               className={`inline-flex items-center text-gray-700 transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-indigo-400 ${link.color}`}
               tabIndex={0}
             >
-              <link.icon
-                style={{ width: 28, height: 28, display: "block" }}
-                aria-hidden="true"
+              <Image
+                src={link.icon}
+                alt={link.label}
+                width={20}
+                height={20}
+                className="object-contain"
               />
             </a>
           ))}

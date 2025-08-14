@@ -268,7 +268,14 @@ export default function Home() {
                 className="w-12 h-12 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors duration-200"
                 aria-label={link.label}
               >
-                <link.icon width={28} height={28} className="object-contain" />
+                {/* Render imported SVG asset via Next Image instead of <link.icon /> */}
+                <Image
+                  src={link.icon}
+                  alt={link.label}
+                  width={28}
+                  height={28}
+                  className="object-contain"
+                />
               </a>
             ))}
           </div>
